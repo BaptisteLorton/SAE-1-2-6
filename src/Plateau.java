@@ -14,35 +14,28 @@ public class Plateau {
 
         Branan branan = new Branan(center, center, true);
 
-        Defenseur d1 = new Defenseur(center+1, center, true);
-        Defenseur d2 = new Defenseur(center-1, center, true);
-        Defenseur d3 = new Defenseur(center, center+1, true);
-        Defenseur d4 = new Defenseur(center, center-1, true);
+        Defenseur[] listeDefenseur = new Defenseur[4];
+        Attaquant[] listeAttaquant = new Attaquant[8];
 
-        Attaquant a1 = new Attaquant(center+2, center, true);
-        Attaquant a2 = new Attaquant(center+3, center, true);
-        Attaquant a3 = new Attaquant(center-2, center, true);
-        Attaquant a4 = new Attaquant(center-3, center, true);
-        Attaquant a5 = new Attaquant(center, center+2, true);
-        Attaquant a6 = new Attaquant(center, center+3, true);
-        Attaquant a7 = new Attaquant(center, center-2, true);
-        Attaquant a8 = new Attaquant(center, center-3, true);
+        listeDefenseur[0] = new Defenseur(center+1, center, true);
+        listeDefenseur[1] = new Defenseur(center-1, center, true);
+        listeDefenseur[2] = new Defenseur(center, center+1, true);
+        listeDefenseur[3] = new Defenseur(center, center-1, true);
+
+        listeAttaquant[0] = new Attaquant(center+2, center, true);
+        listeAttaquant[1] = new Attaquant(center+3, center, true);
+        listeAttaquant[2] = new Attaquant(center-2, center, true);
+        listeAttaquant[3] = new Attaquant(center-3, center, true);
+        listeAttaquant[4] = new Attaquant(center, center+2, true);
+        listeAttaquant[5] = new Attaquant(center, center+3, true);
+        listeAttaquant[6] = new Attaquant(center, center-2, true);
+        listeAttaquant[7] = new Attaquant(center, center-3, true);
 
         pions.add(branan);
 
-        pions.add(d1);
-        pions.add(d2);
-        pions.add(d3);
-        pions.add(d4);
+        for (int i=0; i<listeDefenseur.lenght; i++) pions.add(listeDefenseur[i]);
 
-        pions.add(a1);
-        pions.add(a2);
-        pions.add(a3);
-        pions.add(a4);
-        pions.add(a5);
-        pions.add(a6);
-        pions.add(a7);
-        pions.add(a8);
+        for (int i=0; i<listeAttaquant.lenght; i++) pions.add(listeAttaquant[i]);
 
         return pions;
     }
